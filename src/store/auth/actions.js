@@ -1,4 +1,5 @@
 import api from "../../api";
+import { errorHandling } from "../error/actions";
 
 export function signUp(username, password) {
   return (dispatch, getState) => {
@@ -10,6 +11,6 @@ export function signUp(username, password) {
       }
     })
       .then(response => response) //REDIRECT TO SIGNUP)
-      .catch(error => dispatch(Event(errorHandling(error))));
+      .catch(error => dispatch(errorHandling(error)));
   };
 }
