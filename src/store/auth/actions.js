@@ -14,3 +14,9 @@ export function signUp(username, password, history) {
       .catch(error => dispatch(errorHandling(error)));
   };
 }
+
+// export function login(username, password, history){
+//   return (dispatch, getState) => {
+//     api("/login")
+//   }
+// }
