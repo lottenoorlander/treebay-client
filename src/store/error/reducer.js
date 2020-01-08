@@ -1,6 +1,6 @@
 const initialState = null;
 
-export default function Reducer(state = initialState, action) {
+export default function errorReducer(state = initialState, action) {
   switch (action.type) {
     case "ERROR":
       return action.payload.api_error;
