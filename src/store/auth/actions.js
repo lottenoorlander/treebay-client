@@ -1,7 +1,7 @@
 import api from "../../api";
 import { errorHandling } from "../error/actions";
 
-export function signUp(username, password) {
+export function signUp(username, password, history) {
   return (dispatch, getState) => {
     api("/user", {
       method: "POST",
@@ -10,7 +10,7 @@ export function signUp(username, password) {
         password: password
       }
     })
-      .then(response => response) //REDIRECT TO SIGNUP)
+      .then(response => history.push(`/login`))
       .catch(error => dispatch(errorHandling(error)));
   };
 }

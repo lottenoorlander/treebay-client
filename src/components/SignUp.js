@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { connect, useDispatch } from "react-redux";
+import { withRouter } from "react-router";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
@@ -14,13 +15,13 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function SignUpPage() {
+function SignUpPage(props) {
   const classes = useStyles();
   const dispatch = useDispatch();
 
   const handleSubmit = event => {
     event.preventDefault();
-    const action = signUp(username, password);
+    const action = signUp(username, password, props.history);
     dispatch(action);
     setUsername("");
     setPassword("");
@@ -67,4 +68,4 @@ function SignUpPage() {
   );
 }
 
-export default connect()(SignUpPage);
+export default withRouter(connect()(SignUpPage));

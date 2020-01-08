@@ -4,3 +4,9 @@ export function errorHandling(error) {
     payload: error
   };
 }
+
+export function clearError() {
+  return {
+    type: "CLEAR_ERROR"
+  };
+}
