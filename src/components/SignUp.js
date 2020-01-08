@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-// import { signUp } from "../store/auth/actions";
+import { signUp } from "../store/auth/actions";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -21,8 +21,8 @@ function SignUpPage() {
 
   const handleSubmit = event => {
     event.preventDefault();
-    // const action = signUp(username, password);
-    // dispatch(action);
+    const action = signUp(username, password);
+    dispatch(action);
     setUsername("");
     setPassword("");
   };
