@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getTrees } from "../store/trees/actions";
+import TreeList from "./TreeList";
 
 class TreeListContainer extends Component {
   componentDidMount() {
@@ -8,12 +9,25 @@ class TreeListContainer extends Component {
   }
 
   render() {
-    return <div>This shoud show trees</div>;
+    const treesList = this.props.trees.trees;
+
+    return (
+      <div>
+        This should show trees
+        {treesList
+          ? treesList.map(tree => (
+              <TreeList type={tree.type} price={tree.price} />
+            ))
+          : ""}
+      </div>
+    );
   }
 }
 
 function mapStateToProps(reduxState) {
-  return {};
+  return {
+    trees: reduxState.trees
+  };
 }
 
 export default connect(mapStateToProps)(TreeListContainer);
