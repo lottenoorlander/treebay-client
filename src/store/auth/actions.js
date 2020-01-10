@@ -21,13 +21,14 @@ export function login(username, password, history) {
       method: "POST",
       body: {
         username: username,
-        password: password
+        password: password,
+        isSeller: true
       }
     })
       .then(user => {
         return dispatch(userLoggedIn(user.jwt, user.user));
       })
-      .then(response => history.push(`/`))
+      .then(response => history.push(`/trees`))
       .catch(error => dispatch(errorHandling(error)));
   };
 }

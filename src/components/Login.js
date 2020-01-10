@@ -21,8 +21,7 @@ function LoginPage(props) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    const action = login(username, password, props.history);
-    dispatch(action);
+    dispatch(login(username, password, props.history));
     setUsername("");
     setPassword("");
   };
