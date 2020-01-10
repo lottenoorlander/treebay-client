@@ -4,7 +4,7 @@ import { withRouter } from "react-router";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import { signUp } from "../store/auth/actions";
+import { addTree } from "../store/trees/actions";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -15,24 +15,27 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function SignUpPage(props) {
+function AddTree(props) {
   const classes = useStyles();
   const dispatch = useDispatch();
 
   const handleSubmit = event => {
     event.preventDefault();
-    const action = signUp(username, password, props.history);
-    dispatch(action);
-    setUsername("");
-    setPassword("");
+    const allTheTreeDetails = {
+      type,
+      price
+    };
+    dispatch(addTree(allTheTreeDetails, props.history));
+    setType("");
+    setPrice("");
   };
 
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [type, setType] = useState("");
+  const [price, setPrice] = useState("");
 
   return (
     <div>
-      <h1>Sign Up</h1>
+      <h1>Add a Tree</h1>
       <form
         className={classes.root}
         noValidate
@@ -40,33 +43,30 @@ function SignUpPage(props) {
         onSubmit={handleSubmit}
       >
         <TextField
-          id="outlined-search"
-          name="username"
-          label="Username"
-          onChange={e => setUsername(e.target.value)}
-          value={username}
+          id="outlined-type-input"
+          name="type"
+          label="Type of tree"
+          onChange={e => setType(e.target.value)}
+          value={type}
           variant="outlined"
-          autoComplete="username"
         />{" "}
         <br />
         <TextField
-          id="outlined-password-input"
-          name="password"
-          label="Password"
-          onChange={e => setPassword(e.target.value)}
-          value={password}
-          type="password"
+          id="outlined-price-input"
+          name="price in &#8364;"
+          label="Price"
+          onChange={e => setPrice(e.target.value)}
+          value={price}
           variant="outlined"
-          autoComplete="current-password"
-          minlength="4"
+          type="price"
         />{" "}
         <br />
         <Button variant="contained" color="secondary" type="submit">
-          Sign Up
+          Add your Tree
         </Button>
       </form>
     </div>
   );
 }
 
-export default withRouter(connect()(SignUpPage));
+export default withRouter(connect()(AddTree));

@@ -4,6 +4,7 @@ import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import TreeListContainer from "./components/TreeListContainer";
 import TreeDetails from "./components/TreeDetails";
+import AddTree from "./components/AddTree";
 import Error from "./components/Error";
 import "./App.css";
 
@@ -16,7 +17,8 @@ function App() {
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
         <Route exact path="/trees" component={TreeListContainer} />
-        <Route path="/trees/:treeId" component={TreeDetails} />
+        <Route exact path="/trees/:treeId" component={TreeDetails} />
+        <Route path="/trees/add/tree" component={AddTree} />
       </main>
     </div>
   );

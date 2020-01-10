@@ -14,7 +14,7 @@ class TreeListContainer extends Component {
 
     return (
       <div>
-        This should show trees
+        <h1>List of Trees</h1>
         {treesList
           ? treesList.map(tree => (
               <Link to={`/trees/${tree.id}`}>
@@ -22,6 +22,9 @@ class TreeListContainer extends Component {
               </Link>
             ))
           : ""}
+        <br />
+        <br />
+        <Link to="/trees/add/tree">Add your own tree</Link>
       </div>
     );
   }
