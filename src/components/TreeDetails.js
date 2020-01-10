@@ -8,12 +8,23 @@ class TreeDetails extends Component {
   }
 
   render() {
-    return <div>Details about the trees</div>;
+    return (
+      <div>
+        Details about the trees
+        {this.props.tree ? (
+          <div>
+            {this.props.tree.type} {this.props.tree.price}{" "}
+          </div>
+        ) : (
+          ""
+        )}
+      </div>
+    );
   }
 }
 
 function mapStateToProps(reduxState) {
-  return {};
+  return { tree: reduxState.trees.treeDetails };
 }
 
 export default connect(mapStateToProps)(TreeDetails);

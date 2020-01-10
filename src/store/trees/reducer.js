@@ -9,7 +9,7 @@ export default function treeReducer(state = initialState, action) {
         total: action.payload.total
       };
     case "ONE_TREE":
-      return { ...state, treeDetail: action.payload };
+      return { ...state, treeDetails: action.payload };
     default:
       return state;
   }

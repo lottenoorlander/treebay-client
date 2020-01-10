@@ -10,7 +10,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <header className="App-header">Welcome to Treebay</header>
+      <header>Welcome to Treebay</header>
       <main>
         <Error />
         <Route path="/signup" component={SignUp} />
