@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 import { getTrees } from "../store/trees/actions";
 import TreeList from "./TreeList";
 
@@ -16,7 +17,9 @@ class TreeListContainer extends Component {
         This should show trees
         {treesList
           ? treesList.map(tree => (
-              <TreeList type={tree.type} price={tree.price} />
+              <Link to={`/trees/${tree.id}`}>
+                <TreeList type={tree.type} price={tree.price} />
+              </Link>
             ))
           : ""}
       </div>

@@ -15,3 +15,18 @@ function fetchedTrees(trees) {
     payload: trees
   };
 }
+
+export function getTreeDetails(treeId) {
+  return (dispatch, getState) => {
+    api(`/tree/${treeId}`)
+      .then(tree => dispatch(fetchedOneTreeDetails(tree)))
+      .catch(error => dispatch(errorHandling(error)));
+  };
+}
+
+function fetchedOneTreeDetails(tree) {
+  return {
+    type: "ONE_TREE",
+    payload: tree
+  };
+}

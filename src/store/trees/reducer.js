@@ -1,9 +1,15 @@
-const initialState = [];
+const initialState = { trees: [], treeDetail: null, total: null };
 
 export default function treeReducer(state = initialState, action) {
   switch (action.type) {
     case "ALL_TREES":
-      return action.payload;
+      return {
+        ...state,
+        trees: action.payload.trees,
+        total: action.payload.total
+      };
+    case "ONE_TREE":
+      return { ...state, treeDetail: action.payload };
     default:
       return state;
   }
