@@ -19,7 +19,7 @@ export function login(loginDetails, history) {
       body: loginDetails
     })
       .then(user => {
-        return dispatch(userLoggedIn(user.jwt, user.user));
+        return dispatch(userLoggedIn(user));
       })
       .then(response =>
         loginDetails.isSeller
@@ -30,9 +30,9 @@ export function login(loginDetails, history) {
   };
 }
 
-export function userLoggedIn(jwt, user) {
+export function userLoggedIn(userDetails) {
   return {
     type: "USER_LOGGED_IN",
-    payload: { jwt, user }
+    payload: userDetails
   };
 }

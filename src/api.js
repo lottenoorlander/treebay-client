@@ -10,7 +10,7 @@ export default function api(endpoint, { method = "GET", body, jwt } = {}) {
     .then(response => Promise.all([response.status, response.json()]))
     .then(([status, data]) => {
       if (status >= 400) {
-        throw { api_error: data };
+        return { api_error: data };
       } else {
         return data;
       }
