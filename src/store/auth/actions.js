@@ -1,29 +1,22 @@
 import api from "../../api";
 import { errorHandling } from "../error/actions";
 
-export function signUp(username, password, history) {
+export function signUp(accountDetails, buyerOrSeller, history) {
   return (dispatch, getState) => {
-    api("/user", {
+    api(`/${buyerOrSeller}`, {
       method: "POST",
-      body: {
-        username: username,
-        password: password
-      }
+      body: accountDetails
     })
       .then(response => history.push(`/login`))
       .catch(error => dispatch(errorHandling(error)));
   };
 }
 
-export function login(username, password, history) {
+export function login(loginDetails, history) {
   return (dispatch, getState) => {
     api("/login", {
       method: "POST",
-      body: {
-        username: username,
-        password: password,
-        isSeller: true
-      }
+      body: loginDetails
     })
       .then(user => {
         return dispatch(userLoggedIn(user.jwt, user.user));

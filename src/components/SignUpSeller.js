@@ -4,7 +4,7 @@ import { withRouter } from "react-router";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import { login } from "../store/auth/actions";
+import { signUp } from "../store/auth/actions";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -15,18 +15,17 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function LoginPage(props) {
+function SignUpPage(props) {
   const classes = useStyles();
   const dispatch = useDispatch();
 
   const handleSubmit = event => {
     event.preventDefault();
-    const loginDetails = {
+    const accountDetailsSeller = {
       username,
-      password,
-      isSeller: props.isSeller
+      password
     };
-    dispatch(login(loginDetails, props.history));
+    dispatch(signUp(accountDetailsSeller, "seller", props.history));
     setUsername("");
     setPassword("");
   };
@@ -36,6 +35,7 @@ function LoginPage(props) {
 
   return (
     <div>
+      <h1>Get started as a Seller</h1>
       <form
         className={classes.root}
         noValidate
@@ -61,14 +61,15 @@ function LoginPage(props) {
           type="password"
           variant="outlined"
           autoComplete="current-password"
+          minlength="4"
         />{" "}
         <br />
         <Button variant="contained" color="secondary" type="submit">
-          Login
+          Sign Up
         </Button>
       </form>
     </div>
   );
 }
 
-export default withRouter(connect()(LoginPage));
+export default withRouter(connect()(SignUpPage));

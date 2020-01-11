@@ -21,8 +21,11 @@ function SignUpPage(props) {
 
   const handleSubmit = event => {
     event.preventDefault();
-    const action = signUp(username, password, props.history);
-    dispatch(action);
+    const accountDetailsBuyer = {
+      username,
+      password
+    };
+    dispatch(signUp(accountDetailsBuyer, "buyer", props.history));
     setUsername("");
     setPassword("");
   };
@@ -32,7 +35,7 @@ function SignUpPage(props) {
 
   return (
     <div>
-      <h1>Sign Up</h1>
+      <h1>Get started </h1>
       <form
         className={classes.root}
         noValidate
