@@ -21,7 +21,11 @@ export function login(loginDetails, history) {
       .then(user => {
         return dispatch(userLoggedIn(user.jwt, user.user));
       })
-      .then(response => history.push(`/trees`))
+      .then(response =>
+        loginDetails.isSeller
+          ? history.push(`/seller/account`)
+          : history.push(`/trees`)
+      )
       .catch(error => dispatch(errorHandling(error)));
   };
 }
