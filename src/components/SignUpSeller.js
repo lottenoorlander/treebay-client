@@ -65,7 +65,7 @@ function SignUpPage(props) {
         />{" "}
         <br />
         <Button variant="contained" color="secondary" type="submit">
-          Sign Up
+          Submit
         </Button>
       </form>
     </div>

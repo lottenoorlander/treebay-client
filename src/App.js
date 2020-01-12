@@ -9,7 +9,9 @@ import TreeListContainer from "./components/TreeListContainer";
 import TreeDetails from "./components/TreeDetails";
 import AddTree from "./components/AddTree";
 import Error from "./components/Error";
+import Footer from "./components/Footer";
 import "./App.css";
+import CheckoutFormContainer from "./components/CheckoutFormContainer";
 
 function App() {
   return (
@@ -27,7 +29,11 @@ function App() {
         <Route exact path="/trees" component={TreeListContainer} />
         <Route exact path="/trees/:treeId" component={TreeDetails} />
         <Route path="/trees/add/tree" component={AddTree} />
+        <Route path="/payments" component={CheckoutFormContainer} />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   );
 }

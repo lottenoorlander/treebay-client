@@ -7,7 +7,15 @@ export function signUp(accountDetails, buyerOrSeller, history) {
       method: "POST",
       body: accountDetails
     })
-      .then(response => history.push(`/login`))
+      .then(response => {
+        const loginDetails = {
+          username: accountDetails.username,
+          password: accountDetails.password,
+          isSeller: true
+        };
+        return dispatch(login(loginDetails, history));
+      })
+      .then(response => history.push(`/seller/acount`))
       .catch(error => dispatch(errorHandling(error)));
   };
 }
