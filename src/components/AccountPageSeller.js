@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
+import AccountDetailsSeller from "./AccountDetailsSeller";
 import stripeButton from "../images/blue-stripe-button.png";
 import "./AccountPageSeller.css";
 
@@ -15,7 +16,6 @@ class AccountPageSeller extends Component {
     return (
       <div>
         <h1>Seller Portal</h1>
-        <h3>Welcome {this.props.name}</h3>
         {this.props.paymentDetails ? (
           ""
         ) : (
@@ -26,7 +26,7 @@ class AccountPageSeller extends Component {
               soon as possible.
             </p>
             <a
-              href={`https://connect.stripe.com/express/oauth/authorize?redirect_uri=https://connect.stripe.com/connect/default/oauth/test&client_id=ca_GWSu0kj73OLqfJpHdpdZrdGsU1yHZd02&state=${STATE_VALUE}`}
+              href={`https://connect.stripe.com/express/oauth/authorize?redirect_uri=https://connect.stripe.com/connect/default/oauth/test&client_id=ca_GWSu0kj73OLqfJpHdpdZrdGsU1yHZd02&state=${STATE_VALUE}&stripe_user[business_type]=individual`}
             >
               <img
                 className="stripeButton"
@@ -36,6 +36,7 @@ class AccountPageSeller extends Component {
             </a>
           </div>
         )}
+        <AccountDetailsSeller />
         <div>Links of things a seller can do</div>
         <div>List of trees unsold</div>
         <div>List of trees sold that need to be maintained</div>

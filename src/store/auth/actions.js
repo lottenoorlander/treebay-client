@@ -51,3 +51,25 @@ export function logOut() {
     return dispatch(logOut);
   };
 }
+
+export function getStripeDashUrl() {
+  return (dispatch, getState) => {
+    const jwt = getState().auth.jwt;
+    fetch("http://localhost:4000/seller/stripedashboard", {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${jwt}`,
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        dispatch({ type: "USER_REQUESTED_LINK", payload: data.url });
+      })
+      .catch(error => {
+        console.log(error);
+        dispatch(errorHandling(error));
+      });
+  };
+}
