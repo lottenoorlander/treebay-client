@@ -10,7 +10,7 @@ class LoginBuyer extends Component {
         <h1>To the seller portal</h1>
         <Login isSeller={true} />
         <p>
-          If you don't have an account yet, you can sign up
+          If you don't have an account yet, you can sign up 
           <Link to="/seller/signup">here</Link>
         </p>
       </div>

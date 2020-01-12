@@ -11,7 +11,7 @@ class AccountPageSeller extends Component {
     }
   }
   render() {
-    const STATE_VALUE = this.props.id;
+    const STATE_VALUE = this.props.jwt;
     return (
       <div>
         <h1>Seller Portal</h1>
@@ -36,6 +36,9 @@ class AccountPageSeller extends Component {
             </a>
           </div>
         )}
+        <div>Links of things a seller can do</div>
+        <div>List of trees unsold</div>
+        <div>List of trees sold that need to be maintained</div>
       </div>
     );
   }
@@ -46,7 +49,8 @@ function mapStateToProps(reduxState) {
     signedIn: Boolean(reduxState.auth.jwt),
     isSeller: reduxState.auth.isSeller,
     name: reduxState.auth.user,
-    id: reduxState.auth.id
+    jwt: reduxState.auth.jwt,
+    paymentDetails: reduxState.auth.stripeCode
   };
 }
 

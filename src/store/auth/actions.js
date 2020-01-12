@@ -44,3 +44,10 @@ export function userLoggedIn(userDetails) {
     payload: userDetails
   };
 }
+
+export function logOut() {
+  return (dispatch, getState) => {
+    const logOut = { type: "USER_LOGGED_OUT" };
+    return dispatch(logOut);
+  };
+}
