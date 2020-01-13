@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
+// import treeIcon from "../images/Greentree.svg";
 
 const mapStyles = {
   width: "100%",
@@ -8,6 +9,28 @@ const mapStyles = {
 };
 
 class GoogleMap extends Component {
+  state = {
+    showingInfoWindow: false,
+    activeMarker: {},
+    selectedPlace: {}
+  };
+
+  onMarkerClick = (props, marker, e) =>
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    });
+
+  onMapClicked = props => {
+    if (this.state.showingInfoWindow) {
+      this.setState({
+        showingInfoWindow: false,
+        activeMarker: null
+      });
+    }
+  };
+
   render() {
     return (
       <div>
@@ -20,9 +43,25 @@ class GoogleMap extends Component {
           {this.props.trees
             ? this.props.trees.map(tree => (
                 <Marker
+                  title={tree.type}
                   key={tree.id}
                   position={{ lat: tree.locationX, lng: tree.locationY }}
+                  onClick={this.markerClick}
+                  icon={{
+                    url:
+                      "https://cdn0.iconfinder.com/data/icons/trees-19/50/11-512.png",
+                    anchor: new window.google.maps.Point(32, 32),
+                    scaledSize: new window.google.maps.Size(64, 64)
+                  }}
                 />
+                //  <InfoWindow
+                //   marker={this.state.activeMarker}
+                //   visible={this.state.showingInfoWindow}
+                // >
+                //  <div>
+                //     <h1>{this.state.selectedPlace}</h1>
+                //   </div>
+                // </InfoWindow>
               ))
             : ""}
         </Map>
