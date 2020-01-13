@@ -1,6 +1,5 @@
 import api from "../../api";
 import { errorHandling } from "../error/actions";
-import { useDispatch } from "react-redux";
 
 export function getTrees() {
   return (dispatch, getState) => {
