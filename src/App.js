@@ -30,7 +30,7 @@ function App() {
         <Route path="/seller/signup" component={SignUpSeller} />
         <Route path="/buyer/login" component={LoginBuyer} />
         <Route path="/seller/login" component={LoginSeller} />
-        <Route path="/seller/account" component={AccountPageSeller} />
+        <Route exact path="/seller/account" component={AccountPageSeller} />
         <Route exact path="/trees" component={TreeListContainer} />
         <Route exact path="/trees/:treeId" component={TreeDetails} />
         <Route path="/trees/add/tree" component={AddTree} />

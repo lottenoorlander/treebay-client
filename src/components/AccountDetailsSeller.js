@@ -12,11 +12,17 @@ class AccountDetailsSeller extends Component {
     return (
       <div>
         <h2>Welcome {this.props.name}</h2>
-        <Link to="/seller/account" onClick={this.onClickHandler}>
-          generate a link to your Stripe account
-        </Link>
-        {this.props.stripeLink ? (
-          <a href={this.props.stripeLink}>To your stripe account</a>
+        {this.props.stripeAccount ? (
+          <div>
+            <Link to="/seller/account" onClick={this.onClickHandler}>
+              generate a link to your Stripe account
+            </Link>
+            {this.props.stripeLink ? (
+              <a href={this.props.stripeLink}>To your stripe account</a>
+            ) : (
+              ""
+            )}
+          </div>
         ) : (
           ""
         )}
@@ -29,6 +35,7 @@ function mapStateToProps(reduxState) {
   return {
     name: reduxState.auth.user,
     jwt: reduxState.auth.jwt,
+    stripeAccount: reduxState.auth.stripeCode,
     stripeLink: reduxState.auth.stripeLink
   };
 }
