@@ -13,7 +13,9 @@ class ToolBar extends Component {
     return (
       <div>
         {this.props.signedIn ? (
-          <Link onClick={this.clickHandler}>Logout</Link>
+          <Link to=" " onClick={this.clickHandler}>
+            Logout
+          </Link>
         ) : (
           ""
         )}
