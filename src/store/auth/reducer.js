@@ -41,6 +41,15 @@ export default function authReducer(state = initialState, action) {
     case "USER_REQUESTED_LINK": {
       return { ...state, stripeLink: action.payload };
     }
+    case "UPDATE_ACCOUNT_INFO": {
+      return {
+        ...state,
+        user: action.payload.user,
+        isSeller: action.payload.isSeller,
+        id: action.payload.id,
+        stripeCode: action.payload.stripeCode
+      };
+    }
     default: {
       return state;
     }

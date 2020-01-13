@@ -1,0 +1,15 @@
+.listAndMapContainer {
+  display: flex;
+  width: 90vw;
+}
+
+.listContainer {
+  display: inline-block;
+  width: 45vw;
+}
+
+.mapContainer {
+  display: inline-block;
+  width: 45vw;
+  position: relative;
+}

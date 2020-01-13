@@ -73,3 +73,24 @@ export function getStripeDashUrl() {
       });
   };
 }
+
+export function getAccountInfo() {
+  return (dispatch, getState) => {
+    const jwt = getState().auth.jwt;
+    api("/seller", {
+      method: "GET",
+      jwt: jwt
+    })
+      .then(accountInfo => {
+        return dispatch(updateAccountInfo(accountInfo));
+      })
+      .catch(error => dispatch(errorHandling(error)));
+  };
+}
+
+export function updateAccountInfo(data) {
+  return {
+    type: "UPDATE_ACCOUNT_INFO",
+    payload: data
+  };
+}

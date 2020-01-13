@@ -1,5 +1,8 @@
 .error {
-  border: red;
+  border: 1px solid red;
   background-color: pink;
   color: red;
+  padding: 20px;
+  display: inline-block;
+  border-radius: 5px;
 }

@@ -43,3 +43,10 @@ export function addTree(treeDetails, history) {
       .catch(error => dispatch(errorHandling(error)));
   };
 }
+
+export function yourTrees(yourTrees) {
+  return {
+    type: "YOUR_TREES",
+    payload: yourTrees
+  };
+}

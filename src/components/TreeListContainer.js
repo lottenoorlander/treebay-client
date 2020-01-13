@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { getTrees } from "../store/trees/actions";
 import TreeList from "./TreeList";
 import GoogleMap from "./GoogleMap";
+import "./TreeListContainer.css";
 
 class TreeListContainer extends Component {
   componentDidMount() {
@@ -16,16 +17,21 @@ class TreeListContainer extends Component {
     return (
       <div>
         <h1>List of Trees</h1>
-        {treesList
-          ? treesList.map(tree => (
-              <Link to={`/trees/${tree.id}`} key={tree.id}>
-                <TreeList type={tree.type} price={tree.price} />
-              </Link>
-            ))
-          : ""}
-        <br />
-        <GoogleMap trees={treesList} />
-        <br />
+        <div className="listAndMapContainer">
+          <div className="listContainer">
+            {treesList
+              ? treesList.map(tree => (
+                  <Link to={`/trees/${tree.id}`} key={tree.id}>
+                    <TreeList type={tree.type} price={tree.price} />
+                  </Link>
+                ))
+              : ""}
+            <br />
+          </div>
+          <div className="mapContainer">
+            <GoogleMap trees={treesList} />
+          </div>
+        </div>
         <Link to="/trees/add/tree">Add your own tree</Link>
       </div>
     );
