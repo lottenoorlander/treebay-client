@@ -2,14 +2,14 @@ const jwt = sessionStorage.getItem("jwt");
 const user = sessionStorage.getItem("user");
 const isSeller = JSON.parse(sessionStorage.getItem("isSeller"));
 const id = sessionStorage.getItem("id");
-const stripeCode = JSON.parse(sessionStorage.getItem("stripeCode"));
+// const stripeCode = JSON.parse(sessionStorage.getItem("stripeCode"));
 
 const initialState = {
   jwt: jwt ? jwt : null,
   user: user ? user : null,
   isSeller: isSeller ? JSON.parse(isSeller) : null,
-  id: id ? id : null,
-  stripeCode: stripeCode ? stripeCode : null
+  id: id ? id : null
+  // stripeCode: stripeCode ? stripeCode : null
 };
 
 export default function authReducer(state = initialState, action) {
@@ -22,10 +22,10 @@ export default function authReducer(state = initialState, action) {
         JSON.stringify(action.payload.isSeller)
       );
       sessionStorage.setItem("id", action.payload.id);
-      sessionStorage.setItem(
-        "stripeCode",
-        JSON.stringify(action.payload.stripeCode)
-      );
+      // sessionStorage.setItem(
+      //   "stripeCode",
+      //   JSON.stringify(action.payload.stripeCode)
+      // );
       return action.payload;
     }
     case "USER_LOGGED_OUT": {

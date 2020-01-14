@@ -12,19 +12,16 @@ import AddTree from "./components/AddTree";
 import FinishSellerOnboarding from "./components/FinishSellerOnboarding";
 import Error from "./components/Error";
 import Footer from "./components/Footer";
-import "./App.css";
+import Header from "./components/Header";
 import CheckoutFormContainer from "./components/CheckoutFormContainer";
+import GoogleMapBuyer from "./components/GoogleMapBuyer";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header>Welcome to Treebay</header>
-      <div>
-        <Link to="/seller/login">Start selling</Link>
-        <Link to="/buyer/login">Start buying</Link>
-      </div>
-      <ToolBar />
-      <main>
+      <Header />
+      <main className="main">
         <Error />
         <Route path="/buyer/signup" component={SignUpBuyer} />
         <Route path="/seller/signup" component={SignUpSeller} />
@@ -39,6 +36,7 @@ function App() {
           path="/seller/account/finishedsignup"
           component={FinishSellerOnboarding}
         />
+        <Route path="/buyer/map" component={GoogleMapBuyer} />
       </main>
       <footer>
         <Footer />

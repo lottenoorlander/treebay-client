@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { getTrees } from "../store/trees/actions";
 import TreeList from "./TreeList";
-import GoogleMap from "./GoogleMap";
+import GoogleMapMain from "./GoogleMapMain";
 import "./TreeListContainer.css";
 
 class TreeListContainer extends Component {
@@ -29,7 +29,7 @@ class TreeListContainer extends Component {
             <br />
           </div>
           <div className="mapContainer">
-            <GoogleMap trees={treesList} />
+            <GoogleMapMain trees={treesList} />
           </div>
         </div>
         <Link to="/trees/add/tree">Add your own tree</Link>

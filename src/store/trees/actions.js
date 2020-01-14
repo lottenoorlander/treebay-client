@@ -44,9 +44,25 @@ export function addTree(treeDetails, history) {
   };
 }
 
-export function yourTrees(yourTrees) {
+export function getMyTrees() {
+  return (dispatch, getState) => {
+    const jwt = getState().auth.jwt;
+    api("/trees/bought", {
+      method: "GET",
+      jwt: jwt
+    })
+      .then(myTrees => {
+        dispatch(treesBought(myTrees));
+      })
+      .catch(error => {
+        dispatch(errorHandling(error));
+      });
+  };
+}
+
+export function treesBought(myTrees) {
   return {
-    type: "YOUR_TREES",
-    payload: yourTrees
+    type: "MY_TREES",
+    payload: myTrees
   };
 }

@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
+import { getMyTrees } from "../store/trees/actions";
 
 const mapStyles = {
   width: "45vw",
-  height: "70vh"
+  height: "100%"
 };
 
 class GoogleMap extends Component {
@@ -13,6 +14,10 @@ class GoogleMap extends Component {
     activeMarker: {},
     selectedPlace: {}
   };
+
+  componentDidMount() {
+    this.props.dispatch(getMyTrees());
+  }
 
   onMarkerClick = (props, marker, e) =>
     this.setState({
@@ -39,10 +44,10 @@ class GoogleMap extends Component {
           style={mapStyles}
           initialCenter={{ lat: 52.388294, lng: 4.833039 }}
         >
-          {this.props.trees
-            ? this.props.trees.map(tree => (
+          {this.props.yourTrees
+            ? this.props.yourTrees.map(tree => (
                 <Marker
-                  title={tree.type}
+                  title={`${tree.price} €/month`}
                   name={tree.type}
                   price={tree.price}
                   key={tree.id}
@@ -76,8 +81,8 @@ class GoogleMap extends Component {
   }
 }
 
-function mapStateToProps(state) {
-  return {};
+function mapStateToProps(reduxState) {
+  return { yourTrees: reduxState.trees.yourTrees };
 }
 export default GoogleApiWrapper({
   apiKey: "AIzaSyAOis1sZ9s2092YSGZ3EyeRnB0VWi3wzX0"
