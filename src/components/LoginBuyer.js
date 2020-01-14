@@ -8,7 +8,7 @@ class LoginBuyer extends Component {
     return (
       <div>
         <h1>Login to see your trees</h1>
-        <Login isSeller={false} />
+        <Login />
         <p>
           If you don't have an account yet, you can sign up
           <Link to="/buyer/signup">here</Link>

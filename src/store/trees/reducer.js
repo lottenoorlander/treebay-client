@@ -10,6 +10,11 @@ export default function treeReducer(state = initialState, action) {
       };
     case "ONE_TREE":
       return { ...state, treeDetails: action.payload };
+    case "MY_TREES":
+      return {
+        ...state,
+        yourTrees: action.payload
+      };
     default:
       return state;
   }

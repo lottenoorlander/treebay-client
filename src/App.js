@@ -1,6 +1,5 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
-import ToolBar from "./components/ToolBar";
+import { Route } from "react-router-dom";
 import SignUpBuyer from "./components/SignUpBuyer";
 import SignUpSeller from "./components/SignUpSeller";
 import LoginSeller from "./components/LoginSeller";
@@ -12,19 +11,16 @@ import AddTree from "./components/AddTree";
 import FinishSellerOnboarding from "./components/FinishSellerOnboarding";
 import Error from "./components/Error";
 import Footer from "./components/Footer";
-import "./App.css";
+import Header from "./components/Header";
 import CheckoutFormContainer from "./components/CheckoutFormContainer";
+import AccountPageBuyer from "./components/AccountPageBuyer";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <header>Welcome to Treebay</header>
-      <div>
-        <Link to="/seller/login">Start selling</Link>
-        <Link to="/buyer/login">Start buying</Link>
-      </div>
-      <ToolBar />
-      <main>
+      <Header />
+      <main className="main">
         <Error />
         <Route path="/buyer/signup" component={SignUpBuyer} />
         <Route path="/seller/signup" component={SignUpSeller} />
@@ -39,6 +35,7 @@ function App() {
           path="/seller/account/finishedsignup"
           component={FinishSellerOnboarding}
         />
+        <Route path="/buyer/account" component={AccountPageBuyer} />
       </main>
       <footer>
         <Footer />

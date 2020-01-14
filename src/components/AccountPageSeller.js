@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import AccountDetailsSeller from "./AccountDetailsSeller";
+import { getSellerAccountInfo } from "../store/auth/actions";
 import stripeButton from "../images/blue-stripe-button.png";
 import "./AccountPageSeller.css";
 
@@ -10,6 +11,7 @@ class AccountPageSeller extends Component {
     if (!this.props.signedIn || !this.props.isSeller) {
       this.props.history.push("/seller/login");
     }
+    this.props.dispatch(getSellerAccountInfo());
   }
   render() {
     const STATE_VALUE = this.props.jwt;

@@ -2,14 +2,14 @@ const jwt = sessionStorage.getItem("jwt");
 const user = sessionStorage.getItem("user");
 const isSeller = JSON.parse(sessionStorage.getItem("isSeller"));
 const id = sessionStorage.getItem("id");
-const stripeCode = JSON.parse(sessionStorage.getItem("stripeCode"));
+// const stripeCode = JSON.parse(sessionStorage.getItem("stripeCode"));
 
 const initialState = {
   jwt: jwt ? jwt : null,
   user: user ? user : null,
   isSeller: isSeller ? JSON.parse(isSeller) : null,
-  id: id ? id : null,
-  stripeCode: stripeCode ? stripeCode : null
+  id: id ? id : null
+  // stripeCode: stripeCode ? stripeCode : null
 };
 
 export default function authReducer(state = initialState, action) {
@@ -22,10 +22,10 @@ export default function authReducer(state = initialState, action) {
         JSON.stringify(action.payload.isSeller)
       );
       sessionStorage.setItem("id", action.payload.id);
-      sessionStorage.setItem(
-        "stripeCode",
-        JSON.stringify(action.payload.stripeCode)
-      );
+      // sessionStorage.setItem(
+      //   "stripeCode",
+      //   JSON.stringify(action.payload.stripeCode)
+      // );
       return action.payload;
     }
     case "USER_LOGGED_OUT": {
@@ -40,6 +40,15 @@ export default function authReducer(state = initialState, action) {
     }
     case "USER_REQUESTED_LINK": {
       return { ...state, stripeLink: action.payload };
+    }
+    case "UPDATE_ACCOUNT_INFO": {
+      return {
+        ...state,
+        user: action.payload.user,
+        isSeller: action.payload.isSeller,
+        id: action.payload.id,
+        stripeCode: action.payload.stripeCode
+      };
     }
     default: {
       return state;

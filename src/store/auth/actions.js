@@ -73,3 +73,42 @@ export function getStripeDashUrl() {
       });
   };
 }
+
+export function getSellerAccountInfo() {
+  return (dispatch, getState) => {
+    const jwt = getState().auth.jwt;
+    api("/seller", {
+      method: "GET",
+      jwt: jwt
+    })
+      .then(accountInfo => {
+        return dispatch(updateAccountInfo(accountInfo));
+      })
+      .catch(error => dispatch(errorHandling(error)));
+  };
+}
+
+export function updateAccountInfo(data) {
+  return {
+    type: "UPDATE_ACCOUNT_INFO",
+    payload: data
+  };
+}
+
+export function getBuyerAccountInfo() {
+  return (dispatch, getState) => {
+    const jwt = getState().auth.jwt;
+    api("/buyer", {
+      method: "GET",
+      jwt: jwt
+    })
+      .then(accountInfo => {
+        console.log("account", accountInfo);
+        return dispatch(updateAccountInfo(accountInfo));
+      })
+      .catch(error => {
+        console.log("errro", error);
+        dispatch(errorHandling(error));
+      });
+  };
+}
