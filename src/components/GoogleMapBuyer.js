@@ -5,7 +5,7 @@ import { getMyTrees } from "../store/trees/actions";
 
 const mapStyles = {
   width: "45vw",
-  height: "100%"
+  height: "50%"
 };
 
 class GoogleMap extends Component {
