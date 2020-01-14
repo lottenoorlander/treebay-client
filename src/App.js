@@ -1,6 +1,5 @@
 import React from "react";
-import { Route, Link } from "react-router-dom";
-import ToolBar from "./components/ToolBar";
+import { Route } from "react-router-dom";
 import SignUpBuyer from "./components/SignUpBuyer";
 import SignUpSeller from "./components/SignUpSeller";
 import LoginSeller from "./components/LoginSeller";
@@ -14,7 +13,7 @@ import Error from "./components/Error";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import CheckoutFormContainer from "./components/CheckoutFormContainer";
-import GoogleMapBuyer from "./components/GoogleMapBuyer";
+import AccountPageBuyer from "./components/AccountPageBuyer";
 import "./App.css";
 
 function App() {
@@ -36,7 +35,7 @@ function App() {
           path="/seller/account/finishedsignup"
           component={FinishSellerOnboarding}
         />
-        <Route path="/buyer/map" component={GoogleMapBuyer} />
+        <Route path="/buyer/account" component={AccountPageBuyer} />
       </main>
       <footer>
         <Footer />
