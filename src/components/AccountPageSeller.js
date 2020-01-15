@@ -18,6 +18,7 @@ class AccountPageSeller extends Component {
     return (
       <div>
         <h1>Seller Portal</h1>
+        <h2>Welcome {this.props.name}</h2>
         {this.props.paymentDetails ? (
           ""
         ) : (

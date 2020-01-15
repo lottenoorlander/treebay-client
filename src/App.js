@@ -12,7 +12,6 @@ import FinishSellerOnboarding from "./components/FinishSellerOnboarding";
 import Error from "./components/Error";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import CheckoutFormContainer from "./components/CheckoutFormContainer";
 import AccountPageBuyer from "./components/AccountPageBuyer";
 import "./App.css";
 
@@ -27,15 +26,14 @@ function App() {
         <Route path="/buyer/login" component={LoginBuyer} />
         <Route path="/seller/login" component={LoginSeller} />
         <Route exact path="/seller/account" component={AccountPageSeller} />
+        <Route path="/buyer/account" component={AccountPageBuyer} />
         <Route exact path="/trees" component={TreeListContainer} />
         <Route exact path="/trees/:treeId" component={TreeDetails} />
         <Route path="/trees/add/tree" component={AddTree} />
-        <Route path="/payments" component={CheckoutFormContainer} />
         <Route
           path="/seller/account/finishedsignup"
           component={FinishSellerOnboarding}
         />
-        <Route path="/buyer/account" component={AccountPageBuyer} />
       </main>
       <footer>
         <Footer />

@@ -1,0 +1,12 @@
+.ListComponent {
+  border: 1px solid darkgray;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+  padding: 10px;
+}
+
+.ListComponent:hover {
+  border: 1px solid green;
+  background-color: #009900;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+  padding: 10px;
+}

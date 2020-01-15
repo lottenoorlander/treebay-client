@@ -16,7 +16,7 @@ class TreeListContainer extends Component {
 
     return (
       <div>
-        <h1>List of Trees</h1>
+        <h1>Where can you plant Trees</h1>
         <div className="listAndMapContainer">
           <div className="listContainer">
             {treesList

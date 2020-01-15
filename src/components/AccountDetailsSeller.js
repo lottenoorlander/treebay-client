@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { getStripeDashUrl } from "../store/auth/actions";
+import "./AccountDetailsSeller.css";
 
 class AccountDetailsSeller extends Component {
   onClickHandler = () => {
@@ -10,18 +11,20 @@ class AccountDetailsSeller extends Component {
 
   render() {
     return (
-      <div>
-        <h2>Welcome {this.props.name}</h2>
+      <div className="Money">
+        <h3>Payment Details</h3>
         {this.props.stripeAccount ? (
-          <div>
-            <Link to="/seller/account" onClick={this.onClickHandler}>
-              generate a link to your Stripe account
-            </Link>
-            {this.props.stripeLink ? (
-              <a href={this.props.stripeLink}>To your stripe account</a>
-            ) : (
-              ""
-            )}
+          <div className="shadow">
+            <div className="generateLink">
+              <Link to="/seller/account" onClick={this.onClickHandler}>
+                generate a link to your Stripe account
+              </Link>
+              {this.props.stripeLink ? (
+                <a href={this.props.stripeLink}>To your stripe account</a>
+              ) : (
+                ""
+              )}
+            </div>{" "}
           </div>
         ) : (
           ""
