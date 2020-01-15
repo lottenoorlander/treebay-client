@@ -6,7 +6,10 @@
 
 .listContainer {
   display: inline-block;
-  width: 45vw;
+
+  border-radius: 5px;
+  width: 30vw;
+  margin-left: auto;
 }
 
 .mapContainer {

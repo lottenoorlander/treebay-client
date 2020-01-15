@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Map, GoogleApiWrapper, Marker, InfoWindow } from "google-maps-react";
 import { getMyTrees } from "../store/trees/actions";
+import Card from "react-bootstrap/Card";
+import "./GoogleMapMain.css";
 
 const mapStyles = {
   width: "45vw",
@@ -47,11 +49,13 @@ class GoogleMap extends Component {
           {this.props.yourTrees
             ? this.props.yourTrees.map(tree => (
                 <Marker
-                  title={`${tree.price} €/month`}
+                  title={tree.type}
                   name={tree.type}
                   price={tree.price}
+                  description={tree.description}
                   key={tree.id}
                   id={tree.id}
+                  img={tree.img}
                   position={{ lat: tree.locationX, lng: tree.locationY }}
                   onClick={this.onMarkerClick}
                   icon={{
@@ -68,11 +72,18 @@ class GoogleMap extends Component {
             visible={this.state.showingInfoWindow}
             onClose={this.onClose}
           >
-            <div>
-              <a href={`/trees/${this.state.selectedPlace.id}`}>
-                <h2>{this.state.selectedPlace.title}</h2>
-              </a>
-              <p>{this.state.selectedPlace.price} &#8364;/month</p>
+            <div className="MapCard">
+              <Card style={{ width: "18rem" }}>
+                <a href={`/trees/${this.state.selectedPlace.id}`}>
+                  <Card.Img variant="top" src={this.state.selectedPlace.img} />
+                  <Card.Body>
+                    <Card.Title>{this.state.selectedPlace.title}</Card.Title>
+                    <Card.Text>
+                      {this.state.selectedPlace.description}
+                    </Card.Text>
+                  </Card.Body>
+                </a>
+              </Card>
             </div>
           </InfoWindow>
         </Map>

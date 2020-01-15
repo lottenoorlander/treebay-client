@@ -13,5 +13,10 @@
   color: white;
 }
 
-.main {
+.App a {
+  text-decoration: none;
+}
+
+.App link {
+  text-decoration: none;
 }

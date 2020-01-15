@@ -25,7 +25,6 @@
   text-decoration: none;
 }
 
-/* Change the link color to #111 (black) on hover */
 .ToolBar li a:hover {
   background-color: #111;
 }
@@ -39,4 +38,8 @@
 .ToolBar .LogOut {
   float: right;
   margin-right: 10px;
+}
+
+.logoName {
+  font-family: "Pacifico", cursive;
 }

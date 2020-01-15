@@ -25,6 +25,7 @@ class AccountDetailsSeller extends Component {
                 ""
               )}
             </div>{" "}
+            <Link to="/trees/add/tree">Add your own tree</Link>
           </div>
         ) : (
           ""

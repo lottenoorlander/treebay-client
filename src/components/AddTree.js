@@ -23,13 +23,22 @@ function AddTree(props) {
     event.preventDefault();
     const allTheTreeDetails = {
       type,
-      price
+      price,
+      img,
+      location,
+      description
     };
     dispatch(addTree(allTheTreeDetails, props.history));
     setType("");
     setPrice("");
+    setImg("");
+    setLocation("");
+    setDescription("");
   };
 
+  const [location, setLocation] = useState("");
+  const [description, setDescription] = useState("");
+  const [img, setImg] = useState("");
   const [type, setType] = useState("");
   const [price, setPrice] = useState("");
 
@@ -58,7 +67,36 @@ function AddTree(props) {
           onChange={e => setPrice(e.target.value)}
           value={price}
           variant="outlined"
-          type="price"
+          type="number"
+        />{" "}
+        <br />
+        <TextField
+          id="outlined-type-input"
+          name="img"
+          label="Image of the type of tree"
+          onChange={e => setImg(e.target.value)}
+          value={img}
+          variant="outlined"
+        />{" "}
+        <br />
+        <TextField
+          id="outlined-type-input"
+          name="location"
+          label="Street and nr of the tree?"
+          onChange={e => setLocation(e.target.value)}
+          value={location}
+          variant="outlined"
+        />{" "}
+        <br />
+        <TextField
+          id="outlined-multiline-flexible"
+          name="description"
+          label="Description of what you have for sale"
+          multiline
+          rowsMax="10"
+          onChange={e => setDescription(e.target.value)}
+          value={description}
+          variant="outlined"
         />{" "}
         <br />
         <Button variant="contained" color="secondary" type="submit">

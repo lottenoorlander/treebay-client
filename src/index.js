@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { BrowserRouter as Router } from "react-router-dom";
 import { StripeProvider } from "react-stripe-elements";
+import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import store from "./store";
 import "./index.css";

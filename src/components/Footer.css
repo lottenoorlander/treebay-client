@@ -6,4 +6,8 @@
   height: 30px;
   padding: 10px;
   width: 90vw;
+  color: black;
+  -webkit-text-fill-color: white;
+  -webkit-text-stroke-width: 0.4px;
+  -webkit-text-stroke-color: black;
 }

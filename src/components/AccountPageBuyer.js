@@ -7,8 +7,9 @@ class AccountPageBuyer extends Component {
   componentDidMount() {
     if (!this.props.signedIn || this.props.isSeller) {
       this.props.history.push("/buyer/login");
+    } else {
+      this.props.dispatch(getBuyerAccountInfo());
     }
-    this.props.dispatch(getBuyerAccountInfo());
   }
 
   render() {
@@ -22,7 +23,10 @@ class AccountPageBuyer extends Component {
 }
 
 function mapStateToProps(reduxState) {
-  return { signedIn: Boolean(reduxState.auth.jwt) };
+  return {
+    signedIn: Boolean(reduxState.auth.jwt),
+    isSeller: reduxState.auth.isSeller
+  };
 }
 
 export default connect(mapStateToProps)(AccountPageBuyer);

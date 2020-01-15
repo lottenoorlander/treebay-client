@@ -22,9 +22,11 @@ class ToolBar extends Component {
               <Link to="/buyer/account">Tree Dashboard</Link>
             )}
           </li>
-          <li>
+          <li className="logoName">
             <Link to="/trees">
+              Tree
               <img src={logo} />
+              Bay
             </Link>{" "}
           </li>
           <li className="LogOut">

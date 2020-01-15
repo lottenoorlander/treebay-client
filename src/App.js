@@ -12,6 +12,7 @@ import FinishSellerOnboarding from "./components/FinishSellerOnboarding";
 import Error from "./components/Error";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+import MainPage from "./components/MainPage";
 import AccountPageBuyer from "./components/AccountPageBuyer";
 import "./App.css";
 
@@ -34,6 +35,7 @@ function App() {
           path="/seller/account/finishedsignup"
           component={FinishSellerOnboarding}
         />
+        <Route exact path="/" component={MainPage} />
       </main>
       <footer>
         <Footer />

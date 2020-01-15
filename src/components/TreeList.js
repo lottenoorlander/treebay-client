@@ -4,7 +4,19 @@ import "./TreeList.css";
 function TreeList(props) {
   return (
     <div className="ListComponent">
-      {props.type} - {props.price}
+      <img className="ListImg" src={props.img} alt={props.type} />
+      <div className="ListText">
+        <p>
+          <strong>{props.type}</strong>
+          <br />
+          <i>{props.description} </i>
+        </p>
+        <p className="ListPrice">
+          {" "}
+          <br />
+          &#8364;{props.price}
+        </p>
+      </div>
     </div>
   );
 }

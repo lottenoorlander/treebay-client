@@ -10,8 +10,9 @@ class AccountPageSeller extends Component {
   componentDidMount() {
     if (!this.props.signedIn || !this.props.isSeller) {
       this.props.history.push("/seller/login");
+    } else {
+      this.props.dispatch(getSellerAccountInfo());
     }
-    this.props.dispatch(getSellerAccountInfo());
   }
   render() {
     const STATE_VALUE = this.props.jwt;
