@@ -21,3 +21,10 @@
 .App link {
   text-decoration: none;
 }
+
+.main {
+  display: flex;
+  width: 70vw;
+  margin-left: auto;
+  margin-right: auto;
+}

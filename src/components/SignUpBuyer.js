@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { signUp } from "../store/auth/actions";
+import "./SignUp.css";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -34,8 +35,9 @@ function SignUpPage(props) {
   const [password, setPassword] = useState("");
 
   return (
-    <div>
-      <h1>Get started </h1>
+    <div className="SignUpForm">
+      <h1>Start saving the planet </h1>
+      <br />
       <form
         className={classes.root}
         noValidate
