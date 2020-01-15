@@ -31,7 +31,7 @@ class ToolBar extends Component {
           </li>
           <li className="LogOut">
             {this.props.signedIn ? (
-              <Link to=" " onClick={this.clickHandler}>
+              <Link to="/" onClick={this.clickHandler}>
                 Logout
               </Link>
             ) : (
