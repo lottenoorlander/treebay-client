@@ -5,6 +5,7 @@ import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { addTree } from "../store/trees/actions";
+import "./AddTree.css";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -43,8 +44,9 @@ function AddTree(props) {
   const [price, setPrice] = useState("");
 
   return (
-    <div>
-      <h1>Add a Tree</h1>
+    <div className="AddTreeForm">
+      <h1>Sell your own Tree</h1>
+      <br />
       <form
         className={classes.root}
         noValidate
@@ -58,8 +60,7 @@ function AddTree(props) {
           onChange={e => setType(e.target.value)}
           value={type}
           variant="outlined"
-        />{" "}
-        <br />
+        />
         <TextField
           id="outlined-price-input"
           name="price in &#8364;"
@@ -77,12 +78,11 @@ function AddTree(props) {
           onChange={e => setImg(e.target.value)}
           value={img}
           variant="outlined"
-        />{" "}
-        <br />
+        />
         <TextField
           id="outlined-type-input"
           name="location"
-          label="Street and nr of the tree?"
+          label="Street + nr. of the tree"
           onChange={e => setLocation(e.target.value)}
           value={location}
           variant="outlined"
@@ -91,7 +91,7 @@ function AddTree(props) {
         <TextField
           id="outlined-multiline-flexible"
           name="description"
-          label="Description of what you have for sale"
+          label="What can your customer expect"
           multiline
           rowsMax="10"
           onChange={e => setDescription(e.target.value)}
@@ -99,8 +99,9 @@ function AddTree(props) {
           variant="outlined"
         />{" "}
         <br />
+        <br />
         <Button variant="contained" color="secondary" type="submit">
-          Add your Tree
+          Put up for sale
         </Button>
       </form>
     </div>
