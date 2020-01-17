@@ -10,6 +10,8 @@
   overflow: hidden;
   background-color: #333;
   text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 .ToolBar li {
@@ -42,4 +44,5 @@
 
 .logoName {
   font-family: "Pacifico", cursive;
+  margin-right: 2vw;
 }

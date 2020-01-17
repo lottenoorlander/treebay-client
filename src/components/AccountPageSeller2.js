@@ -4,9 +4,6 @@ import { withRouter } from "react-router";
 import AccountDetailsSeller from "./AccountDetailsSeller";
 import { getSellerAccountInfo } from "../store/auth/actions";
 import stripeButton from "../images/blue-stripe-button.png";
-import { Link } from "react-router-dom";
-import Button from "@material-ui/core/Button";
-
 import "./AccountPageSeller.css";
 
 class AccountPageSeller extends Component {
@@ -35,17 +32,8 @@ class AccountPageSeller extends Component {
         </div>
         <div className="Stats">
           <h3>Stats</h3>
-          <p>
-            Total trees Sold: {treesSold.length}
-            <br />
-            Earned: &#8364;
-            {treesSold.reduce((TotalPrice, tree) => {
-              return TotalPrice + parseInt(tree.price);
-            }, 0)}{" "}
-            <br />
-            You allowed for {26 * treesSold.length} kg/yr more CO2 to be
-            compensated
-          </p>
+          <br />
+          <p>This will hold all the stats</p>
         </div>
 
         <div className="ToDo">
@@ -74,50 +62,10 @@ class AccountPageSeller extends Component {
         <div className="TreeOverview">
           <h3>Manage Trees</h3>
           <div className="TreeContainer">
-            <div className="UnsoldTrees">
-              <h4>Unsold Trees</h4>
-              {this.props.trees
-                ? treesUnsold.map(tree => {
-                    return (
-                      <div className="MyTrees">
-                        <Link to={`/trees/${tree.id}`}>{tree.type}</Link>
-                        <Button
-                          variant="contained"
-                          color="secondary"
-                          type="submit"
-                        >
-                          Edit
-                        </Button>
-                        <Button
-                          variant="contained"
-                          color="secondary"
-                          type="submit"
-                        >
-                          Delete
-                        </Button>
-                      </div>
-                    );
-                  })
-                : ""}
-            </div>
+            <div className="UnsoldTrees">List of trees unsold</div>
             <div className="SoldTrees">
-              <h4>Sold Trees</h4>
-              {this.props.trees
-                ? treesSold.map(tree => {
-                    return (
-                      <div className="MyTrees">
-                        <Link to={`/trees/${tree.id}`}>{tree.type}</Link>
-                        <Button
-                          variant="contained"
-                          color="secondary"
-                          type="submit"
-                        >
-                          Update
-                        </Button>
-                      </div>
-                    );
-                  })
-                : ""}
+              List of trees sold that need to be maintained
+              {/* {treesSold} */}
             </div>
           </div>
         </div>

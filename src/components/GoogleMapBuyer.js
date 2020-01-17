@@ -6,8 +6,8 @@ import Card from "react-bootstrap/Card";
 import "./GoogleMapMain.css";
 
 const mapStyles = {
-  width: "45vw",
-  height: "50%"
+  width: "60vw",
+  height: "60vh"
 };
 
 class GoogleMap extends Component {
@@ -39,7 +39,7 @@ class GoogleMap extends Component {
 
   render() {
     return (
-      <div>
+      <div className="mapContainer">
         <Map
           google={this.props.google}
           zoom={7}

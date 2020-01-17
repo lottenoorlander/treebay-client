@@ -11,11 +11,16 @@ class AccountDetailsSeller extends Component {
 
   render() {
     return (
-      <div className="Money">
+      <div>
+        <h3>Sell more tree space</h3>
+        <p>
+          {" "}
+          <Link to="/trees/add/tree">Add a new space for a tree</Link>
+        </p>
         <h3>Payment Details</h3>
         {this.props.stripeAccount ? (
-          <div className="shadow">
-            <div className="generateLink">
+          <div>
+            <div>
               <Link to="/seller/account" onClick={this.onClickHandler}>
                 generate a link to your Stripe account
               </Link>
@@ -25,7 +30,6 @@ class AccountDetailsSeller extends Component {
                 ""
               )}
             </div>{" "}
-            <Link to="/trees/add/tree">Add your own tree</Link>
           </div>
         ) : (
           ""

@@ -14,6 +14,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import MainPage from "./components/MainPage";
 import AccountPageBuyer from "./components/AccountPageBuyer";
+import SuccessPage from "./components/SuccessPage";
 import "./App.css";
 
 function App() {
@@ -35,11 +36,12 @@ function App() {
           path="/seller/account/finishedsignup"
           component={FinishSellerOnboarding}
         />
+        <Route path="/trees/:id/success" component={SuccessPage} />
         <Route exact path="/" component={MainPage} />
       </main>
-      <footer>
+      {/* <footer>
         <Footer />
-      </footer>
+      </footer> */}
     </div>
   );
 }

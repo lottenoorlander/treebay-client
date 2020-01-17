@@ -27,6 +27,7 @@ class MainPage extends Component {
           <div className="StartLinkContainer">
             <div className="StartLink">
               <Button
+                className="StartButton"
                 onClick={this.onClickSeller}
                 variant="contained"
                 color="secondary"
@@ -36,6 +37,7 @@ class MainPage extends Component {
             </div>
             <div className="StartLink">
               <Button
+                className="StartButton"
                 onClick={this.onClickBuyer}
                 variant="contained"
                 color="secondary"

@@ -15,7 +15,7 @@ class TreeListContainer extends Component {
     const treesList = this.props.trees.trees;
 
     return (
-      <div>
+      <div className="TreeListContainer">
         <h1>Where can you plant Trees</h1>
         <div className="listAndMapContainer">
           <div className="listContainer">

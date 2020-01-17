@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import GoogleMapBuyer from "./GoogleMapBuyer";
 import { getBuyerAccountInfo } from "../store/auth/actions";
+import "./AccountPageBuyer.css";
 
 class AccountPageBuyer extends Component {
   componentDidMount() {
@@ -13,10 +14,24 @@ class AccountPageBuyer extends Component {
   }
 
   render() {
+    const trees = this.props.trees ? this.props.trees : [];
     return (
-      <div>
-        <h1>Your tree details</h1>
-        <GoogleMapBuyer />
+      <div className="AccountPageBuyer">
+        <div className="WelcomeMessage">
+          <h1>
+            Welcome Back <br /> {this.props.name}
+          </h1>
+        </div>
+        <div className="Stats">
+          <p>
+            Total tree planted: {trees.length}
+            <br />
+            You compensated {26 * trees.length} kg of your yearly CO2 footprint
+          </p>
+        </div>
+        <div className="YourTrees">
+          <GoogleMapBuyer trees={this.props.trees} />
+        </div>
       </div>
     );
   }
@@ -25,7 +40,9 @@ class AccountPageBuyer extends Component {
 function mapStateToProps(reduxState) {
   return {
     signedIn: Boolean(reduxState.auth.jwt),
-    isSeller: reduxState.auth.isSeller
+    name: reduxState.auth.user,
+    isSeller: reduxState.auth.isSeller,
+    trees: reduxState.auth.trees
   };
 }
 

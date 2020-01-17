@@ -1,4 +1,13 @@
-/* .AccountPageSeller {
+.error {
+  border: 1px solid green;
+  background-color: lightgreen;
+  color: green;
+  padding: 20px;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.successPage {
   text-align: center;
   display: flex;
   width: 100%;
@@ -11,4 +20,4 @@
   margin-right: auto;
   display: block;
   padding: 5vh;
-} */
+}

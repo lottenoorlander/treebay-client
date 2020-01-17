@@ -45,7 +45,7 @@ function AddTree(props) {
 
   return (
     <div className="AddTreeForm">
-      <h1>Sell your own Tree</h1>
+      <h1>Sell your own space for a Tree </h1>
       <br />
       <form
         className={classes.root}

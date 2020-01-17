@@ -5,7 +5,7 @@ import Card from "react-bootstrap/Card";
 import "./GoogleMapMain.css";
 
 const mapStyles = {
-  width: "45vw",
+  width: "100%",
   height: "100%"
 };
 
@@ -75,7 +75,7 @@ class GoogleMapMain extends Component {
                     <Card.Title>{this.state.selectedPlace.title}</Card.Title>
                     <Card.Text>
                       {this.state.selectedPlace.description}
-                      {this.state.selectedPlace.price} &#8364;/month
+                      <br /> {this.state.selectedPlace.price} &#8364;
                     </Card.Text>
                   </Card.Body>
                 </a>

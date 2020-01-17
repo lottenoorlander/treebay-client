@@ -47,7 +47,8 @@ export default function authReducer(state = initialState, action) {
         user: action.payload.user,
         isSeller: action.payload.isSeller,
         id: action.payload.id,
-        stripeCode: action.payload.stripeCode
+        stripeCode: action.payload.stripeCode,
+        trees: action.payload.trees
       };
     }
     default: {

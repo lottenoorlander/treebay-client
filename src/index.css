@@ -5,8 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  min-height: 105vh;
+  background: url("images/background2.jpg") no-repeat center center fixed;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -15,7 +16,7 @@ code {
 html {
   text-align: center;
   min-height: 100vh;
-  background: url("images/background.jpg") no-repeat center center fixed;
+  background: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
