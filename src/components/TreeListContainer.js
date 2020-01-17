@@ -15,14 +15,19 @@ class TreeListContainer extends Component {
     const treesList = this.props.trees.trees;
 
     return (
-      <div>
-        <h1>List of Trees</h1>
+      <div className="TreeListContainer">
+        <h1>Where can you plant Trees</h1>
         <div className="listAndMapContainer">
           <div className="listContainer">
             {treesList
               ? treesList.map(tree => (
                   <Link to={`/trees/${tree.id}`} key={tree.id}>
-                    <TreeList type={tree.type} price={tree.price} />
+                    <TreeList
+                      type={tree.type}
+                      price={tree.price}
+                      description={tree.description}
+                      img={tree.img}
+                    />
                   </Link>
                 ))
               : ""}
@@ -32,7 +37,6 @@ class TreeListContainer extends Component {
             <GoogleMapMain trees={treesList} />
           </div>
         </div>
-        <Link to="/trees/add/tree">Add your own tree</Link>
       </div>
     );
   }

@@ -107,7 +107,6 @@ export function getBuyerAccountInfo() {
         return dispatch(updateAccountInfo(accountInfo));
       })
       .catch(error => {
-        console.log("errro", error);
         dispatch(errorHandling(error));
       });
   };

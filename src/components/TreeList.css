@@ -1,0 +1,23 @@
+.ListComponent {
+  background-color: white;
+  border: 1px solid white;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+  border-radius: 5px;
+  color: black;
+  display: flex;
+  flex-direction: row;
+  text-align: left;
+  padding: 1vh 1vw;
+}
+
+.ListComponent:hover {
+  border: 1px solid black;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.46);
+}
+
+.ListImg {
+  float: left;
+  /* border-radius: 50%; */
+  /* width: 50px; */
+  height: 100%;
+}

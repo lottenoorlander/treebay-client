@@ -1,0 +1,48 @@
+.ToolBar {
+  font-size: 18px;
+  text-align: center;
+}
+
+.ToolBar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+}
+
+.ToolBar li {
+  float: left;
+  margin-left: 10px;
+}
+
+.ToolBar li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.ToolBar li a:hover {
+  background-color: #111;
+}
+
+.ToolBar img {
+  height: 1vw;
+  filter: invert(100%);
+  display: inline-block;
+}
+
+.ToolBar .LogOut {
+  float: right;
+  margin-right: 10px;
+}
+
+.logoName {
+  font-family: "Pacifico", cursive;
+  margin-right: 2vw;
+}
