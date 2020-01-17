@@ -4,11 +4,13 @@ import ToolBar from "./ToolBar";
 
 class Header extends Component {
   render() {
-    return <div>{this.props.signedIn ? <ToolBar /> : ""}</div>;
+    return (
+      <div>
+        <ToolBar />
+      </div>
+    );
   }
 }
 
-function mapStateToProps(reduxState) {
-  return { signedIn: Boolean(reduxState.auth.jwt) };
-}
+function mapStateToProps(reduxState) {}
 export default connect(mapStateToProps)(Header);
