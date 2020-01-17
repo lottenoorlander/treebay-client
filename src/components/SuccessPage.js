@@ -7,7 +7,7 @@ class SuccessPage extends Component {
   render() {
     return (
       <div className="successPage">
-        <div className="error">
+        <div className="success">
           <h3>Congratulations!</h3>
           <p>You just made the environment a little bit better</p>
         </div>
