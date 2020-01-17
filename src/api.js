@@ -1,5 +1,5 @@
 export default function api(endpoint, { method = "GET", body, jwt } = {}) {
-  return fetch("https://blooming-cliffs-31508.herokuapp.com" + endpoint, {
+  return fetch("https://www.blooming-cliffs-31508.herokuapp.com" + endpoint, {
     method: method,
     headers: {
       Authorization: `Bearer ${jwt}`,

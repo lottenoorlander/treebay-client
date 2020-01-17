@@ -56,7 +56,7 @@ export function getStripeDashUrl() {
   return (dispatch, getState) => {
     const jwt = getState().auth.jwt;
     fetch(
-      "https://blooming-cliffs-31508.herokuapp.com/seller/stripedashboard",
+      "https://www.blooming-cliffs-31508.herokuapp.com/seller/stripedashboard",
       {
         method: "GET",
         headers: {
