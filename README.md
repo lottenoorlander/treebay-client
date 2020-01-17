@@ -17,6 +17,7 @@ The Stripe api key is for test purposes only, feel free to replace it with your 
 
 ## Where is it deployed?
 =frontend deployed [here](https://competent-fermi-36d257.netlify.com) on netlify=
+
 =backend deployed at [here](https://blooming-cliffs-31508.herokuapp.com) on heroku=
 
 ## Built with
