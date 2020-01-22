@@ -14,32 +14,31 @@ class ToolBar extends Component {
   render() {
     return (
       <div className="ToolBar">
-        <ul>
-          <li>
-            {this.props.isSeller ? (
-              <Link to="/seller/account">To Seller Portal</Link>
-            ) : (
-              <Link to="/buyer/account">Tree Dashboard</Link>
-            )}
-          </li>
-          <li className="logoName">
-            <Link to="/trees">
-              Tree
-              <img src={logo} />
-              Bay
-            </Link>{" "}
-          </li>
-          <li className="LogOut">
-            {this.props.signedIn ? (
+        {this.props.signedIn ? (
+          <ul>
+            <li>
+              {this.props.isSeller ? (
+                <Link to="/seller/account">To Seller Portal</Link>
+              ) : (
+                <Link to="/buyer/account">Tree Dashboard</Link>
+              )}
+            </li>
+            <li className="logoName">
+              <Link to="/trees">
+                Tree
+                <img src={logo} />
+                Bay
+              </Link>{" "}
+            </li>
+            <li className="LogOut">
               <Link to="/" onClick={this.clickHandler}>
                 Logout
               </Link>
-            ) : (
-              ""
-            )}
-          </li>
-        </ul>
-        : " "}
+            </li>
+          </ul>
+        ) : (
+          ""
+        )}
       </div>
     );
   }
