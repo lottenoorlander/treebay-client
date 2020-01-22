@@ -1,6 +1,6 @@
 import api from "../../api";
 import { errorHandling } from "../error/actions";
-var stripe = window.Stripe("pk_test_5GgrLOlI0oopZXeMO6nNbpDp00GkzGAiT1", {
+var stripe = window.Stripe(process.env.STRIPE_API, {
   stripeAccount: "acct_1G0BSqCVyUaTyDOU"
 });
 
