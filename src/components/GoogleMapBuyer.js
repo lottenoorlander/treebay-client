@@ -96,5 +96,5 @@ function mapStateToProps(reduxState) {
   return { yourTrees: reduxState.trees.yourTrees };
 }
 export default GoogleApiWrapper({
-  apiKey: process.env.GOOGLE_API
+  apiKey: "AIzaSyAOis1sZ9s2092YSGZ3EyeRnB0VWi3wzX0"
 })(connect(mapStateToProps)(GoogleMap));

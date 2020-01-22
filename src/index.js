@@ -11,7 +11,7 @@ import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <Provider store={store}>
-    <StripeProvider apiKey={process.env.STRIPE_API}>
+    <StripeProvider apiKey="pk_test_5GgrLOlI0oopZXeMO6nNbpDp00GkzGAiT1">
       <Router>
         <App />
       </Router>
