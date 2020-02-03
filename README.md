@@ -29,5 +29,4 @@ The Stripe api key is for test purposes only, feel free to replace it with your 
 -express.js
 -sequelize
 
-## How to deploy?
-git push heroku master??
+
